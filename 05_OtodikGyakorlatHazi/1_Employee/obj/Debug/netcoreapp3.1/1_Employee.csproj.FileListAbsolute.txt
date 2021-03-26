@@ -1,0 +1,13 @@
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\bin\Debug\netcoreapp3.1\1_Employee.exe
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\bin\Debug\netcoreapp3.1\1_Employee.deps.json
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\bin\Debug\netcoreapp3.1\1_Employee.runtimeconfig.json
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\bin\Debug\netcoreapp3.1\1_Employee.runtimeconfig.dev.json
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\bin\Debug\netcoreapp3.1\1_Employee.dll
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\bin\Debug\netcoreapp3.1\1_Employee.pdb
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\obj\Debug\netcoreapp3.1\1_Employee.csprojAssemblyReference.cache
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\obj\Debug\netcoreapp3.1\1_Employee.AssemblyInfoInputs.cache
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\obj\Debug\netcoreapp3.1\1_Employee.AssemblyInfo.cs
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\obj\Debug\netcoreapp3.1\1_Employee.csproj.CoreCompileInputs.cache
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\obj\Debug\netcoreapp3.1\1_Employee.dll
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\obj\Debug\netcoreapp3.1\1_Employee.pdb
+C:\Users\javor\Downloads\04_NegyedikGyakorlat\1_Employee\obj\Debug\netcoreapp3.1\1_Employee.genruntimeconfig.cache
