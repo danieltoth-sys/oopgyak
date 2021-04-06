@@ -18,27 +18,43 @@ namespace book
 
             //MEGOLDASOK HELYE
             //tomb letrehozasa
-
-            //for (int i = 0; i < bookArray.Length; i++)
+            Book[] bookArray = new Book[numberOfBooks]; 
+            for (int i = 0; i < bookArray.Length; i++)
             {
+                Console.Write("A könyv szerzője: ");
+                string author = Console.ReadLine();
+                Console.Write("A könyv címe: ");
+                string title = Console.ReadLine();
+                Console.Write("A könyv ára: ");
+                int price = int.Parse(Console.ReadLine());
+                Console.Write("A könyv oldalszáma: ");
+                int pages = int.Parse(Console.ReadLine());
                 //konyv adatainak bekerese
                 //konyv letrehozasa
+                bookArray[i] = new Book(author, title, price, pages);
             }
 
             //MEGOLDASOK HELYE
             //ListBookArray() hasznalata
-
+            Book.ListBookArray(bookArray);
             //Leghosszabb könyv
-
+            Console.WriteLine("Leghosszabb könyv: "+ Book.GetLongestBook(bookArray).ToString());
             //Leghosszabb páros oldalszámú könyv
-
+            Console.WriteLine("Leghosszabb páros könyv: " + Book.GetLongestEvenPagesBook(bookArray).ToString());
             //AuthorStatistics() hasznalata
+            Book.AuthorStatistics(bookArray);
         }
 
         private static int ReadInteger()
         {
             //IMPLEMENTALNI
-            throw new NotImplementedException();
+            int number;
+            do
+            {
+                number = int.Parse(Console.ReadLine());
+            } while (number < 1 || number > 10);
+            
+            return number;
         }
     }
 }

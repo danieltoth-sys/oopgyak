@@ -62,8 +62,125 @@ namespace book
     {
         private string author;
         private string title;
-        private int yearOfPublication;
+        private readonly int yearOfPublication = DateTime.Now.Year;
         private int price;
+        private int pages;
+
+        public Book(string author, string title, int price, int pages)
+        {
+            this.author = author;
+            this.title = title;
+            if (price < 0)
+            {
+                price = 0;
+            }
+            if (pages < 0)
+            {
+                pages = 0;
+            }
+            this.price = price;
+            this.pages = pages;
+        }
+
+        public Book(string author, string title)
+        {
+            this.author = author;
+            this.title = title;
+            this.price = 2500;
+            this.pages = 100;
+        }
+
+        public override string ToString()
+        {
+            return author + ": " + title + ", " + yearOfPublication + ". Price: " + price + " Ft, pp " + pages;
+        }
+
+        public static Book GetLonger(Book a, Book b)
+        {
+            if (a.Pages < b.Pages)
+            {
+                return b;
+            }
+            else
+            {
+                return a;
+            }
+        }
+
+        public bool HasEvenPages()
+        {
+            return Pages % 2 == 0;
+        }
+
+        public static void ListBookArray(Book[] Array)
+        {
+            for (int i = 0; i < Array.Length; i++)
+            {
+                Console.WriteLine(Array[i].ToString());
+            }
+        }
+
+        public static Book GetLongestBook(Book[] Array)
+        {
+            Book mx = Array[0];
+            for (int i = 0; i < Array.Length; i++)
+            {
+                if (Array[i].Pages > mx.Pages)
+                {
+                    mx = Array[i];
+                }
+            }
+            return mx;
+        }
+
+        public static Book GetLongestEvenPagesBook(Book[] Array)
+        {
+            Book mxpg = null;
+            for (int i = 0; i < Array.Length; i++)
+            {
+                if (Array[i].Pages % 2 == 0)
+                {
+                    mxpg = Array[i];
+                    break;
+                }
+            }
+            for (int i = 0; i < Array.Length; i++)
+            {
+                if (Array[i].Pages % 2 ==0 && Array[i].Pages > mxpg.Pages)
+                {
+                    mxpg = Array[i];
+                }
+            }
+            return mxpg;
+        }
+
+        public static void AuthorStatistics(Book[] Array)
+        {
+            List<string> authors = new List<string>();
+            for (int i = 0; i < Array.Length; i++)
+            {
+                authors.Add(Array[i].Author);
+            }
+            int[] bookNumbers = new int[authors.Count];
+            for (int i = 0; i < bookNumbers.Length; i++)
+            {
+                bookNumbers[i] = 0;
+            }
+            for (int i = 0; i < authors.Count; i++)
+            {
+                for (int j = 0; j < Array.Length; j++)
+                {
+                    if (authors[i] == Array[j].Author)
+                    {
+                        bookNumbers[j++]++;
+                    }
+                }
+            }
+            for (int i = 0; i < bookNumbers.Length; i++)
+            {
+                Console.WriteLine(Array[i].Author +": "+ bookNumbers[i++]);
+            }
+        }
 
         public int Price
         {
@@ -79,12 +196,12 @@ namespace book
         public int YearOfPublication
         {
             get { return yearOfPublication; }
-            set
+            /*set
             {
                 //Értékadás előtti ellenőrzés:
                 //- a megjelenés éve, ha nem 1950 és 2021 között van, legyen 2021, egyébként a megadott érték
                 yearOfPublication = value;
-            }
+            }*/
         }
         public string Title
         {
@@ -96,18 +213,40 @@ namespace book
             get { return author; }
             set { author = value; }
         }
+        public int Pages
+        {
+            get { return pages; }
+            set 
+            {
+                if (value > 0)
+                {
+                    pages = value;
+                }
+            }
+        }
+        public int GetPages()
+        { return Pages; }
 
         public int GetPrice()
         { return Price; }
 
         public void SetPrice(int value)
+        {
+            if (value < 1000)
+            {
+                value = 1000;
+            }
+            Price = value;
+        }
+
+        public void SetPages(int value)
         { Price = value; }
 
         public int GetYearOfPublication()
         { return YearOfPublication; }
 
-        public void SetYearOfPublication(int value)
-        { YearOfPublication = value; }
+        /*public void SetYearOfPublication(int value)
+        { YearOfPublication = value; }*/
 
         public string GetTitle()
         { return Title; }
@@ -127,9 +266,9 @@ namespace book
                 price += (int)Math.Round(price * percentage / 100.0);
         }
 
-        public string DisplayInformation()
+        /*public string DisplayInformation()
         {
             return author + ": " + title + ", " + yearOfPublication + ". Price: " + price + " Ft";
-        }
+        }*/
     }
 }
