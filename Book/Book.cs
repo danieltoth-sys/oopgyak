@@ -64,7 +64,7 @@ namespace book
         private string title;
         private readonly int yearOfPublication = DateTime.Now.Year;
         private int price;
-        private int pages;
+        private int pages;        
 
         public Book(string author, string title, int price, int pages)
         {
